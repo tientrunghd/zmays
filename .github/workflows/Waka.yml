@@ -1,21 +1,29 @@
-name: Waka Readme
+name: Windows
 
 on:
   workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter CRD code'
+        required: true
+      pincode:
+        description: 'Six digit Pin'
+        required: true
   schedule:
     # Runs at 12am UTC
     - cron: '0 0 * * *'
 
 jobs:
-  update-readme:
-    name: WakaReadme DevMetrics
-    runs-on: ubuntu-latest
+ build:
+    runs-on: windows-latest
+
     steps:
-      - uses: athul/waka-readme@master
-        with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_TITLE: true
-          BLOCKS: ->
-          TIME_RANGE: all_time
-          SHOW_TIME: true
-          SHOW_MASKED_TIME: true
+    - uses: actions/checkout@v2
+    - name: Initializing Setup
+      run: ./setup.ps1
+    - name: Keepalive Workflow
+    - uses: gautamkrishnar/keepalive-workflow@1.0.9
+    - name: Starting CRD 
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    
+    
