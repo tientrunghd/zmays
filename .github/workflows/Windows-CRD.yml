@@ -17,7 +17,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: gautamkrishnar/keepalive-workflow@1.0.9
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD 
