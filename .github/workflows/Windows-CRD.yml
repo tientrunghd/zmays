@@ -17,12 +17,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - uses: gautamkrishnar/keepalive-workflow@v1
     - uses: actions/checkout@v2
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-    - uses: gautamkrishnar/keepalive-workflow@v1
 
 
   
