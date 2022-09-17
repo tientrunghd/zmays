@@ -23,4 +23,4 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: Keepalive Workflow
-  uses: gautamkrishnar/keepalive-workflow@1.0.9
+    - uses: gautamkrishnar/keepalive-workflow@1.0.9
