@@ -17,6 +17,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp 
       uses: azure/webapps-deploy@v2
@@ -27,4 +28,4 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: keep alive
-      run: ./keepalive2.ps1
+      run: ./timeout.ps1
