@@ -15,16 +15,12 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
   steps:
-   - uses: actions/checkout@v3
-   - uses: actions/setup-node@v3
+    - uses: actions/checkout@v3
+    - name: Setup Node.js environment
+  uses: actions/setup-node@v3.5.1
   with:
-    node-version: 16
-        cache: npm
-        cache-dependency-path: subdir/package-lock.json
-    - run: npm ci
-    - run: npm test
+    node-version: 16.x
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD 
