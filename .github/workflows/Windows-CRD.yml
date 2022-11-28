@@ -20,7 +20,7 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=123456
     - name: Keepalive Workflow
-      uses: gautamkrishnar/keepalive-workflow@1.0.10
+      uses: ./timeout.ps1
 
   
     
