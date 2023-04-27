@@ -44,7 +44,6 @@ jobs:
 
       run: .\ngrok\ngrok.exe tcp 3389
       
-    - run: |
-        Invoke-WebRequest https://raw.githubusercontent.com/rafahsilv247/remote/main/resources/loop.ps1 -OutFile loop.ps1
-        ./loop.ps1
-        run: sleep 6h
+    - name: loop
+      
+    - run: ./loop.ps1
