@@ -44,6 +44,6 @@ jobs:
 
       run: .\ngrok\ngrok.exe tcp 3389
       
-    - name: loop
-      
-    - run: ./loop.ps1
+    - name: Loop
+      run: |
+        .\loop.ps1
